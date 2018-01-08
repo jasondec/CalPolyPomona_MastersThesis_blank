@@ -1,0 +1,155 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\input{content/content_header}
+%**************************************************************
+%-----------------> CONTENT STARTS HERE <----------------------
+%**************************************************************
+\chapter{LaTeX examples}
+% \appendix{LaTeX examples}
+
+This is a section to test formatting and figure placement in LaTeX.
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{Citations}
+In-line paragraph citation:\par
+As much as 1600-m of uplift has occurred along the Eastern Sierran range front \citep{Rinehart1964} over the past 5 Ma.
+
+In-line year paragraph citation:
+Early mapping of the region by \citet{Rinehart1964} and later by \citet{Bailey1974} suggested the HCF once extended into the area now occupied by the LVC.
+\citep{Ponce2013}
+
+This is an empty citation.  It is intended to be used as a placeholder until a proper reference can be identified \citep{addReference}
+\begin{verbatim}
+    \citep{addReference}
+\end{verbatim}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{Lists and bullets}
+Basic list (aka "itemize")\par
+	\begin{itemize}
+		\item Stuff
+		\item More stuff
+		\item Even more stuff
+	\end{itemize}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{Figures}
+Although partially filled in by Bishop Tuff and post-eruptive sediments, the Long Valley Caldera is a prominent feature on the landscape today as a 17 km by 32 km elongate depression (Figure \ref{fig:example1}).
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=9cm]{figures/overview}
+	\caption{Overview map of the Long Valley area.  Modified from \citet{Taylor1980}.}
+	\label{fig:example1}
+\end{figure}
+\begin{verbatim}
+    Figure \ref{fig:overview}
+    \begin{figure}[ht]
+    	\centering
+    	\includegraphics[width=9cm]{figures/overview}
+    	\caption{caption_text_here \citet{Taylor1980}.}
+    	\label{fig:example1}
+    \end{figure}
+\end{verbatim}
+
+
+\subsection{Code snippet as figure}
+We can also create a figure that contains Python code (Figure \ref{fig:example2}).
+
+	\begin{figure}[ht]
+		\centering
+        \input{code/rotate_xy.tex}
+    	\caption{A Python function to rotate a point \textit{(xPoint, yPoint)} about an origin \textit{(x0,y0)} by \textit{(angle)} degrees.}
+    	\label{fig:example2}
+	\end{figure}
+
+\begin{verbatim}
+	\begin{figure}[ht]
+    	\centering
+        \begin{lstlisting}
+		    <code goes here>
+		\end{lstlisting}
+    	\caption{caption_text}
+    	\label{fig:example2}
+	\end{figure}
+\end{verbatim}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{Tables}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{ |c|c|c| } 
+         \hline
+         cell1 & cell2 & cell3 \\ 
+         cell4 & cell5 & cell6 \\ 
+         cell7 & cell8 & cell9 \\ 
+         \hline
+    \end{tabular}
+    \caption{A basic table with multiple rows and columns}
+    \label{table:example01}
+\end{table}
+\begin{verbatim}
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{ |c|c|c| } 
+         \hline
+         cell1 & cell2 & cell3 \\ 
+         cell4 & cell5 & cell6 \\ 
+         cell7 & cell8 & cell9 \\ 
+         \hline
+    \end{tabular}
+    \caption{A basic table with multiple rows and columns}
+    \label{table:example01}
+\end{table}
+\end{verbatim}
+
+\section{Formatting commands}
+Float barrier = A command from 'placeins' package.  Stops floats from extending beyond a certain point.  For ex:  Force figures to be placed within a given chapter.
+\begin{verbatim}
+    \FloatBarrier
+\end{verbatim}
+
+\section{Special characters}
+\begin{verbatim}
+    Degree symbol:  360$^{\circ}$
+\end{verbatim}
+Degree symbol:  360$^{\circ}$
+\par
+Italics and Bold:  This \textit{part} is in \textit{italics}.  This \textbf{part} is in \textbf{bold}.
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{In-Line Commenting}
+To-Do items will show up in margins of printed document with pointers to todo flag
+\begin{verbatim}
+    \todo[inline]{Add in-line to-do item here}
+    \todo{add margin to-do here}
+\end{verbatim}
+\todo[inline]{Add in-line to-do item here}
+\todo{add margin to-do here}
+
+Print list of to-do notes:
+\listoftodos[Notes]
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\section{Chapters/Sections}
+\subsection{This is a sub-sub-section}
+\section*{No number here - just name}
+This is a subsection with no section number
+\begin{verbatim}
+    \subsection*{subsection_title_here}
+\end{verbatim}
+\section{New Commands}
+This command places *citation needed* in blue among the text
+\begin{verbatim}
+    \addcite
+\end{verbatim}
+\addcite
+
+
+This command indicates an estimated value - useful to insert estimates in the text for later correction and citation
+\begin{verbatim}
+    \est{2 m}
+\end{verbatim}
+The elevation difference between the points was \est{2 m}
+
+%--------------------------------------------------------------
+%-------------------> END CONTENT HERE <-----------------------
+%--------------------------------------------------------------
+\input{content/content_footer}
+\end{document}

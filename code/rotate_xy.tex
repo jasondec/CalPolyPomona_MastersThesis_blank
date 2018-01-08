@@ -1,0 +1,13 @@
+% This is an example of inserting code in the thesis.  This example is Python2
+
+\begin{lstlisting}
+def rotate_xy(xPoint,yPoint,x0,y0,angle):
+	import math
+	# angle in radians
+
+	xDiff = xPoint - x0
+	yDiff = yPoint - y0
+	xNew = x0 + xDiff * math.cos(angle) - yDiff * math.sin(angle)
+	yNew = y0 + yDiff * math.cos(angle) + xDiff * math.sin(angle)
+    return xNew,yNew
+\end{lstlisting}

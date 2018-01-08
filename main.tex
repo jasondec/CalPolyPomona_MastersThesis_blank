@@ -1,0 +1,111 @@
+%--------------------------------------------------------------------
+% Created by Tzvetelin Petrov, Nov. 03, 2006
+% Modified by Berit Givens, May 07, 2014
+% Modified by Rafael Morales, May 10, 2014
+% Modified by Jason De Cristofaro, Dec 14, 2017
+%--------------------------------------------------------------------
+
+
+\documentclass{CPP}
+\usepackage{mathptmx} % This package uses the Times typeface rather than the proprietary Times New Roman.  This will help the library with accessibility/508/ADA compliance requirements
+\include{formatting/preamble}
+\include{formatting/pythonCode}
+
+%Enter the information indicated inside the curly brackets below.
+\begin{document}
+% \def\biblio{}
+
+
+       %% Will be printed in all caps on title and sig pages
+    \titleone{The environmental effects of fraggles}
+    \titletwo{on radish dust population}
+    \doctype{Thesis}
+    \doctypeUp{Thesis}
+    \degree{Master of Science}
+    \University{California State University, Fraggle Rock}
+    \Department{Puppet Studies}
+    \field{Puppet Ecology}
+    \Author{Gobo T. Fraggle}
+    \Advisor{Jim Henson}
+    \MemberA{Jerry Nelson}
+    \MemberAtitle{Assistant Professor}
+    \MemberAagency{Fraggle Studies}
+    \MemberB{Dave Goelz}
+    \MemberBtitle{Assistant Professor}
+    \MemberBagency{Fraggle Studies}
+    \Year{1993}
+    \Term{Spring}
+
+%______________________________________________________________
+% \listoftodos[Notes]     %% remove for final version
+% \linenumbers            %% to be removed for final version
+%______________________________________________________________
+%Type your abstract here.
+
+\Abstract{
+	Doozer sticks are a construction material utilized by The Doozers to form the infrastructure of the subterranean world known as Fraggle Rock.  They are primarily constructed of Raddish Dust, a rapidly depleting resource that not only serves as the chief component of doozer sticks, but as the primary food for the beings known as Fraggles.  Fraggles ingest the raddish dust indirectly, by feeding on the completed civil works of the Doozers, forcing the Doozers to re-build their infrastructure over and over again.  The heavy strain put on the raddish dust resource has caused a noticeable decrease in the ease with which the material is mined/grown and fears of a raddish dust shortage have caused mass panic in the Fraggle Rock community.  Here we study the behavioral aspects of the Fraggle to better understand the effects of doozer stick consumption on the radish dust population.
+   }
+
+%______________________________________________________________
+    % Type your acknowledgments here.
+\Acknowledgments{
+        I would like to thank my advisor, my cats and that crazy guy on the subway who yells at the walls.  I couldn't have done this without you.}
+%______________________________________________________________
+
+%% Comment these out to hide pages during writing process
+%%% -----------------> START - DO NOT DELETE <-----------------
+\titlepage
+\signaturepage{\addcontentsline{toc}{chapter}{\signaturepagename}}
+\acknowledgmentspage{\addcontentsline{toc}{chapter}{\acknowledgmentspagename}}
+\abstractpage{\addcontentsline{toc}{chapter}{\abstractpagename}}
+\tableofcontents
+\listoftables{\addcontentsline{toc}{chapter}{\listtablename}}
+\listoffigures{\addcontentsline{toc}{chapter}{\listfigurename}}
+%%%-------------------> END - DO NOT DELETE <-------------------
+
+\newpage
+\pagenumbering{arabic} \setcounter{page}{1} \thispagestyle{empty}
+%______________________________________________________________
+
+%**************************************************************
+%-----------------> CONTENT STARTS HERE <----------------------
+%**************************************************************
+%% Introduction
+\subfile{content/introduction}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% Methodology
+\subfile{content/methodology}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% Results
+\subfile{content/results}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% Discussion
+\subfile{content/discussion}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% Conclusions
+\subfile{content/conclusions}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% References
+\newpage
+\bibliography{refs}\addcontentsline{toc}{chapter}{References}
+
+%_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%% Appendices
+\appendix
+% \begin{appendices}
+% \subfile{content/examples}
+\subfile{content/codeA}
+% \end{appendices}
+
+%**************************************************************
+%-------------------> END CONTENT  HERE <----------------------
+%**************************************************************
+
+\end{document}
+
+

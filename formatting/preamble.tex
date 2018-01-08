@@ -1,0 +1,68 @@
+%% Document customization by Jason De Cristofaro. 2017-12-17
+
+
+% \usepackage[utf8]{inputenc}
+% \usepackage[backend=biber, style=authoryear, sorting=nyt, citestyle=authoryear]{biblatex}
+\usepackage{nameref}
+\usepackage{indentfirst}
+
+% renames bibliography to "References"
+\renewcommand{\bibname}{References}
+\usepackage{url}
+
+% look in the following locations with \input command
+% \def\input@path{{content/}{code/}}
+
+
+% use AGU citation style
+\usepackage[square,authoryear]{natbib}
+\bibliographystyle{formatting/aguMod_jdc}
+
+\usepackage{lipsum}                     % Dummytext
+\usepackage{siunitx}                    % si units
+\usepackage[font=small,labelfont=bf,skip=5pt]{caption}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{graphicx}
+
+\usepackage{lineno}                     % allow addition of line numbers
+\usepackage{sidecap}
+
+% \usepackage{fancyhdr}      % allow custom headers and footers
+
+\usepackage{import} % allow importing of external latex files into main doc
+
+\usepackage[section]{placeins}
+
+
+% % To-do notes in comments will be extracted and highlighted
+% \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage[prependcaption,textsize=tiny]{todonotes}
+% \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+
+% defines new command "\notes" for insertion of in-line notes as red text
+% \newcommand\notes[1]{\textcolor{red}{**Note: #1**}}
+\newcommand\notes[1]{\todo[inline, size=\tiny, bordercolor=green!50, backgroundcolor=green!5]{Note: #1}}
+
+\newcommand{\e}[1]{\times 10^{#1}}  % \e now is used for scientific notation
+
+\usepackage{subfiles}                   % use subfiles
+
+% set graphics path with multiple directories to accommodate ref from multiple locations
+\graphicspath{{figures/}{../figures/}}
+\usepackage{hyperref}                   % allows hyperlinks
+
+\usepackage{appendix}
+
+% new command to hold an estimated or unknown value
+\newcommand\est[1]{\textcolor{blue}{#1} [estimated]}
+
+% new command to insert *citation needed* tage in text
+\newcommand\addcite[1]{\textcolor{blue}{*citation needed*}}
+
+%% this adds a new command to keep refs from printing in every chapter
+%% https://tex.stackexchange.com/questions/217517/handle-bib-in-subfiles
+%% accessed 2017-12-17
+\providecommand{\main}{.}  % *Modification: define file location
+% \def\biblio{\bibliographystyle{aguMod_jdc}\bibliography{\main/mendeley}}
+\def\biblio{\bibliographystyle{aguMod_jdc}}
